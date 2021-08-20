@@ -17,6 +17,6 @@ part fip   --source rawcopy --fstype=ext4 --fsoptions "noauto" --part-name=fip -
 
 part bootfs --source rawcopy --sourceparams="file=st-image-bootfs-${DISTRO}-${MACHINE}.ext4" --ondisk mmcblk --fstype=ext4 --label bootfs --active --fixed-size 64M
 part / --source rootfs --ondisk mmcblk --fstype=ext4 --label rootfs --fixed-size 768M --uuid "${DEVICE_PARTUUID_ROOTFS_mmc0}"
-part usrfs --source rawcopy --sourceparams="file=st-image-userfs-${DISTRO}-${MACHINE}.ext4" --ondisk mmcblk --fstype=ext4 --label userfs --active --fixed-size 172M
+part userfs --source rawcopy --sourceparams="file=st-image-userfs-${DISTRO}-${MACHINE}.ext4" --ondisk mmcblk --fstype=ext4 --label userfs --active --fixed-size 172M
 
 bootloader --ptable gpt
